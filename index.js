@@ -189,7 +189,7 @@ function getFullNames(runners) {
   let fullName = [];
   runners.forEach(runner => {
     const{first_name, last_name} = runner
-    fullName.push('${last_name}, ${first_name}')
+    fullName.push('${last-name}, ${first-name}')
   })
   return fullName
 }
@@ -294,12 +294,12 @@ function counterMaker() {
  * etc
 */
 function counterMakerWithLimit(limit) {
- let count = -1;
+ let count = 0;
   return function counter(){
-    if(count === limit){
-      if(count = -1)
+    if(count > limit){
+      count = 0;
     }
-    return ++count
+    return count++;
   }
 }  
 
